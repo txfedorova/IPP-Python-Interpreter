@@ -70,7 +70,3 @@ The implementation also supports reading the XML source from standard input when
 The IPP course covers programming-language paradigms and approaches to processing and implementing programming languages. This repository contains the interpreter part of the 2022/2023 coursework.
 
 Official course page: https://www.vut.cz/studenti/predmety/detail/231010
-
-## Notes
-
-The original `interpret.py` coursework implementation is preserved unchanged. The relevant implementation details from the original Czech project documentation were consolidated into this README for a cleaner portfolio repository.
