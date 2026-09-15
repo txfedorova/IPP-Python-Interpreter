@@ -15,6 +15,16 @@ The implementation uses only the Python standard library, including `argparse` f
 - `Context` — stores interpreter state, including variable frames, stacks, labels and input data.
 - `Interpreter` — executes IPPcode23 instructions and performs runtime checks.
 
+## Execution flow
+
+1. Command-line arguments are parsed and the XML source is opened from a file or standard input.
+2. The XML structure, instruction attributes and arguments are validated.
+3. Instructions are stored and sorted by their `order` value.
+4. Labels are collected before execution so jump and call instructions can resolve their destinations.
+5. Instructions are executed sequentially while the interpreter maintains variable frames, data stack and call stack state.
+
+Helper methods handle frame lookup, variable access and updates, argument type/value resolution and label-based jumps.
+
 ## Supported functionality
 
 The implementation includes:
@@ -50,12 +60,10 @@ The implementation also supports reading the XML source from standard input when
 ```text
 .
 ├── README.md
-├── interpret.py
-└── readme1.md
+└── interpret.py
 ```
 
-- `interpret.py` — original interpreter implementation.
-- `readme1.md` — original Czech implementation documentation submitted with the coursework.
+`interpret.py` contains the original interpreter implementation.
 
 ## Course context
 
@@ -65,4 +73,4 @@ Official course page: https://www.vut.cz/studenti/predmety/detail/231010
 
 ## Notes
 
-The original coursework files `interpret.py` and `readme1.md` are preserved unchanged. This top-level README was added later to make the repository easier to understand from GitHub.
+The original `interpret.py` coursework implementation is preserved unchanged. The relevant implementation details from the original Czech project documentation were consolidated into this README for a cleaner portfolio repository.
